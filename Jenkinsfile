@@ -1,6 +1,6 @@
 pipeline {
     options {
-        timestamps true
+        timestamps()
         skipDefaultCheckout true
     }
 
