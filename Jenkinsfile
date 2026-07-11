@@ -1,4 +1,8 @@
 pipeline {
+    parameters {
+        string name: 'UPLOAD_HOST', defaultValue: 'a', description: 'b', trim: true
+    }
+
     options {
         timestamps()
         skipDefaultCheckout true
