@@ -14,6 +14,7 @@ pipeline {
                 sh 'ls'
                 echo 'abc'
                 sh 'printenv'
+                sh 'git log'
             }
         }
     }
