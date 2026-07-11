@@ -6,15 +6,19 @@ pipeline {
     agent any
 
     stages {
-        stage('test') {
+        stage('clean') {
             steps {
                 cleanWs deleteDirs: true, disableDeferredWipeout: true
-                sh 'ls'
-                checkout scm
-                sh 'ls'
-                echo 'abc'
-                sh 'printenv'
-                sh 'git log'
+            }
+        }
+        stage('checkout') {
+            steps {
+                script {
+                    def scmVars = checkout scm
+                    echo "scmVars = ${scmVars}"
+                    echo "branch = ${scmVars.GIT_BRANCH}"
+                    echo "commit = ${scmVars.GIT_COMMIT}"
+                }
             }
         }
     }
