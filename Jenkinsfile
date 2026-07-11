@@ -22,5 +22,15 @@ pipeline {
                 sh 'echo $SCM_BRANCH'
             }
         }
+        stage('build') {
+            steps {
+                sh 'make'
+            }
+        }
+        stage('upload') {
+            steps {
+                sh 'scp'
+            }
+        }
     }
 }
