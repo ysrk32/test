@@ -15,10 +15,9 @@ pipeline {
             steps {
                 script {
                     def scmVars = checkout scm
-                    echo "scmVars = ${scmVars}"
-                    echo "branch = ${scmVars.GIT_BRANCH}"
-                    echo "commit = ${scmVars.GIT_COMMIT}"
+                    env.SCM_BRANCH = scmVars.GIT_BRANCH
                 }
+                sh 'echo $SCM_BRANCH'
             }
         }
     }
