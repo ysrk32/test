@@ -1,5 +1,6 @@
 pipeline {
     options {
+        timestamps
         skipDefaultCheckout true
     }
 
@@ -21,5 +22,8 @@ pipeline {
                 sh 'echo $SCM_BRANCH'
             }
         }
+    }
+
+    post {
     }
 }
