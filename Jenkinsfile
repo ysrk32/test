@@ -5,7 +5,7 @@ pipeline {
         stage('test') {
             steps {
                 sh 'ls'
-                scm checkout
+                checkout scm
                 sh 'ls'
                 echo 'abc'
             }
