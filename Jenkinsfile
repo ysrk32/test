@@ -13,6 +13,7 @@ pipeline {
                 checkout scm
                 sh 'ls'
                 echo 'abc'
+                sh 'printenv'
             }
         }
     }
